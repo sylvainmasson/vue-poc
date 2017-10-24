@@ -3,10 +3,12 @@
     <form id="search">
       Search <input name="query" v-model="filterKey">
     </form>
+    {{sortColumn}}
   <gridTemplate
     :data="data"
     :columns="columns"
-    :filter-key="filterKey">
+    :filter-key="filterKey"
+    :sort-key="sortColumn">
   </gridTemplate>
   </div>
 </template>

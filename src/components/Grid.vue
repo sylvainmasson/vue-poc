@@ -28,7 +28,8 @@ export default {
   props: {
     data: Array,
     columns: Array,
-    filterKey: String
+    filterKey: String,
+    sortKey: String
   },
   data: function () {
     var sortOrders = {}
@@ -36,7 +37,6 @@ export default {
       sortOrders[key] = 1
     })
     return {
-      sortKey: '',
       sortOrders: sortOrders
     }
   },
