@@ -1,6 +1,25 @@
 # vue-poc
 
-> A Vue.js project
+> A Vue.js project with 3 pages :
+
+- HelloWorld.vue : index included links to the others pages
+- Table : examples of datatable with data provides by JsonPlaceHolder
+- Albums : CRUD example implementation with FireBase Database
+
+The project was built with vue-cli.
+It includes : 
+
+- vue-router
+- EsLint
+- Karma + Mocha for unit testing
+- e2e tests with Nigthwatch
+
+I add : 
+
+- Bootstrap
+- Firebase
+- vuefire : Firebase bindings for Vue.js
+
 
 ## Build Setup
 
