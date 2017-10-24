@@ -19,6 +19,7 @@ I add :
 - Bootstrap
 - Firebase
 - vuefire : Firebase bindings for Vue.js
+- vue-resource : Http client for Vue.js
 
 
 ## Build Setup
