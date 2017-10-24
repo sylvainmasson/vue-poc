@@ -1,6 +1,6 @@
 <template>
   <div align="left">
-    <h3>Crud sur firebase : base de données NoSQL sur le cloud
+    <h3>Crud sur firebase : base de données NoSQL fourni par Google
     </h3>
     <table>
     <thead>
