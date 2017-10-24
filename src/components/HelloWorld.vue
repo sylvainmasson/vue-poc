@@ -2,7 +2,7 @@
   <div class="hello">
     <img src="../assets/logo.png">
     <h1>{{ msg }}</h1>
-    <h2><a href="#/table">Mon premier tableau</a></h2>
+    <h2><a href="#/post">Mon premier tableau</a></h2>
     <h2><a href="#/albums">Liste des albums</a></h2>
     <h2>Essential Links</h2>
     <ul>

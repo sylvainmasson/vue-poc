@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueFire from 'vuefire'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
-import Table from '@/components/Table'
+import Post from '@/components/Post'
 import Album from '@/components/Album'
 import HelloWorld from '@/components/HelloWorld'
 
@@ -18,9 +18,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/table/',
-      name: 'Table',
-      component: Table
+      path: '/post/',
+      name: 'Post',
+      component: Post
     },
     {
       path: '/albums/',
