@@ -35,7 +35,7 @@ I add :
 
 ## Demo
 
-Demo here : http://vue-poc.surge.sh/#/post
+Demo here : http://vue-poc.surge.sh/
 
 ## Build Setup
 
