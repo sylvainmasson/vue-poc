@@ -1,15 +1,25 @@
 <template>
   <div >
-    <form id="search">
-      Search <input name="query" v-model="filterKey">
-    </form>
-    {{sortColumn}}
-  <gridTemplate
-    :data="data"
-    :columns="columns"
-    :filter-key="filterKey"
-    :sort-key="sortColumn">
-  </gridTemplate>
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-7 text-left">
+            <label>Liste des posts provenant de JsonPlaceHolder&nbsp</label>
+          </div>
+          <div class="col-sm-5 text-right">
+            Recherche : <input name="query" v-model="filterKey">
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <gridTemplate
+          :data="data"
+          :columns="columns"
+          :filter-key="filterKey"
+          :sort-key="sortColumn">
+        </gridTemplate>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,62 +50,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-body {
-  font-family: Helvetica Neue, Arial, sans-serif;
-  font-size: 14px;
-  color: #444;
-}
 
-table {
-  border-radius: 3px;
-  background-color: #fff;
-}
-
-th {
-  background-color: #42b983;
-  color: rgba(255,255,255,0.66);
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-td {
-  background-color: #f9f9f9;
-}
-
-th, td {
-  min-width: 120px;
-  padding: 10px 20px;
-}
-
-th.active {
-  color: #fff;
-}
-
-th.active .arrow {
-  opacity: 1;
-}
-
-.arrow {
-  display: inline-block;
-  vertical-align: middle;
-  width: 0;
-  height: 0;
-  margin-left: 5px;
-  opacity: 0.66;
-}
-
-.arrow.asc {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid #fff;
-}
-
-.arrow.dsc {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid #fff;
-}
 </style>
