@@ -1,12 +1,20 @@
 # vue-poc
 
-> A Vue.js project with 3 pages :
+> A Vue.js poc with 3 pages :
 
 - HelloWorld.vue : index included links to the others pages
-- Table : examples of datatable with data provides by JsonPlaceHolder
-- Albums : CRUD example implementation with FireBase Database
+- Table : example of datatable component with data provides by JsonPlaceHolder
+- Albums : CRUD implementation with FireBase Database
 
-The project was built with vue-cli.
+The project was built with vue-cli full-featured Webpack + vue-loader setup with hot reload, linting, testing & css extraction :
+
+``` bash
+# installer vue-cli
+$ npm install --global vue-cli
+# créer un nouveau projet en utilisant le template "webpack"
+$ vue init webpack vue-poc
+```
+
 It includes : 
 
 - vue-router
@@ -21,6 +29,13 @@ I add :
 - vuefire : Firebase bindings for Vue.js
 - vue-resource : Http client for Vue.js
 
+## Prerequisites
+
+[Node.js](https://nodejs.org/en/) (>=4.x, 6.x preferred), npm version 3+ and [Git](https://git-scm.com/).
+
+## Demo
+
+Demo here : http://vue-poc.surge.sh/
 
 ## Build Setup
 
