@@ -5,6 +5,8 @@
 - HelloWorld.vue : index included links to the others pages
 - Table : example of datatable component with data provides by JsonPlaceHolder
 - Albums : CRUD implementation with FireBase Database
+- Fiche album : détail d'un album
+
 
 The project was built with vue-cli full-featured Webpack + vue-loader setup with hot reload, linting, testing & css extraction :
 
@@ -63,3 +65,11 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## TODO
+
+- Ajouter l'url ou le lien vers allmusic dans le tableau des albums
+- Ajouter un libellé de colonne différent du nom de la colonne dans firebase
+- Ajouter un filtre par colonne
+- Ajouter la gestion de la pagination avec bootstrap
+- Revoir la partie formulaire et validation de celui-ci
