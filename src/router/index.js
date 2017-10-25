@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import VueResource from 'vue-resource'
 import Post from '@/components/Post'
 import Album from '@/components/Album'
+import FicheAlbum from '@/components/FicheAlbum'
 import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
@@ -26,6 +27,11 @@ export default new Router({
       path: '/albums/',
       name: 'Album',
       component: Album
+    },
+    {
+      path: '/albums/:key',
+      name: 'FicheAlbum',
+      component: FicheAlbum
     }
   ]
 })
