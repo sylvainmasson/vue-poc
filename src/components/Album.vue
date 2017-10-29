@@ -56,22 +56,35 @@
       </div>
       <div class="panel-body">
         <form id="form" v-on:submit.prevent="saveAlbum">
-          <input type="text" v-model="selectedAlbum.artist" placeholder="Artist">
-          <input type="text" v-model="selectedAlbum.title" placeholder="Title">
-          <input type="text" v-model="selectedAlbum.style" placeholder="Style">
-          <input type="text" v-model="selectedAlbum.url" placeholder="Url all music">
-          <input type="number" v-model="selectedAlbum.nbPistes" placeholder="Nombre de pistes">
-          <button class="btn btn-success"  v-on:click="saveAlbum()">
+          <div class="form-group" :class="{'has-error': !validation.artist }"> 
+            <label class="control-label" for="artist">Artist *</label>
+            <input type="text" id="artist" class="form-control" v-model="selectedAlbum.artist">
+            <p class="text-danger" v-show="!validation.artist">Artist cannot be empty.</p>
+          </div>
+          <div class="form-group" :class="{'has-error': !validation.title }"> 
+            <label class="control-label" for="title">Title *</label>
+            <input type="text" id="title" class="form-control" v-model="selectedAlbum.title">
+            <p class="text-danger" v-show="!validation.title">Artist cannot be empty.</p>
+          </div>
+          <div class="form-group"> 
+            <label class="control-label" for="style">Style</label>
+            <input type="text" id="style" class="form-control" v-model="selectedAlbum.style">
+          </div>
+          <div class="form-group"> 
+            <label class="control-label" for="url">Url all music</label>
+            <input type="text" id="url" class="form-control" v-model="selectedAlbum.url">
+          </div>
+          <div class="form-group"> 
+            <label class="control-label" for="url">Nombre de pistes</label>
+            <input type="number" v-model="selectedAlbum.nbPistes">
+          </div>
+          <button class="btn btn-success"  v-on:click="saveAlbum()" :disabled="!isValid">
             <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Enregistrer
           </button>
           <button class="btn btn-sm btn-default" v-on:click="cancel()">
             <span class="glyphicon glyphicon-repeat"></span>&nbsp;Annuler
           </button>
         </form>
-        <ul class="text-danger">
-          <li v-show="!validation.artist">Artist cannot be empty.</li>
-          <li v-show="!validation.title">Title cannot be empty.</li>
-        </ul>
       </div>
     </div>
   </div>
