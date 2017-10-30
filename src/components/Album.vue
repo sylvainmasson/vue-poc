@@ -64,7 +64,7 @@
           <div class="form-group" :class="{'has-error': !validation.title }"> 
             <label class="control-label" for="title">Title *</label>
             <input type="text" id="title" class="form-control" v-model="selectedAlbum.title">
-            <p class="text-danger" v-show="!validation.title">Artist cannot be empty.</p>
+            <p class="text-danger" v-show="!validation.title">Title cannot be empty.</p>
           </div>
           <div class="form-group"> 
             <label class="control-label" for="style">Style</label>
