@@ -33,6 +33,7 @@ export default new Router({
     {
       path: '/albums/:key',
       name: 'FicheAlbum',
+      beforeEnter: requireAuth,
       component: FicheAlbum
     },
     {

@@ -65,19 +65,19 @@ function clearAccessToken() {
 
 // Helper function that will allow us to extract the access_token and id_token
 function getParameterByName(name) {
-  let match = RegExp('[#&]' + name + '=([^&]*)').exec(window.location.hash);
+  var match = RegExp('[#&]' + name + '=([^&]*)').exec(window.location.hash);
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
 // Get and store access_token in local storage
 export function setAccessToken() {
-  let accessToken = getParameterByName('access_token');
+  var accessToken = getParameterByName('access_token');
   localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
 }
 
 // Get and store id_token in local storage
 export function setIdToken() {
-  let idToken = getParameterByName('id_token');
+  var idToken = getParameterByName('id_token');
   localStorage.setItem(ID_TOKEN_KEY, idToken);
 }
 
