@@ -25,6 +25,7 @@
 
 <script>
 import GridTemplate from '@/components/Grid'
+import axios from 'axios'
 
 export default {
   name: 'Post',
@@ -41,7 +42,9 @@ export default {
     }
   },
   mounted () {
-    this.$http.get('https://jsonplaceholder.typicode.com/comments').then(response => {
+    axios.get('http://jsonplaceholder.typicode.com/comments')
+    .then(response => {
+      // JSON responses are automatically parsed.
       this.data = response.data
     })
   }
