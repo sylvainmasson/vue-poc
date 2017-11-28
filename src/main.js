@@ -4,9 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueFire from 'vuefire'
+import VueGoodTable from 'vue-good-table'
 
 Vue.config.productionTip = false
 Vue.use(VueFire)
+Vue.use(VueGoodTable)
 
 /* eslint-disable no-new */
 new Vue({

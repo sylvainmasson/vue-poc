@@ -8,6 +8,7 @@
       <li v-show="isLoggedIn()"><a href="/albums">Albums</a></li>
       <li><a href="/public-battles">Public battles</a></li>
       <li v-show="isLoggedIn()"><a href="/private-battles">Private battles</a></li>
+      <li><a href="/table-example">Exemple table</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>

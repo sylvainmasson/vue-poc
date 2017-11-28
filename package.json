@@ -14,15 +14,16 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "firebase": "^4.6.0",
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "vuefire": "^1.4.4",
     "auth0-js": "^8.6.0",
     "auth0-lock": "^10.14.0",
     "axios": "^0.16.1",
-    "jwt-decode": "^2.2.0"
+    "bootstrap": "^3.3.7",
+    "firebase": "^4.6.0",
+    "jwt-decode": "^2.2.0",
+    "vue": "^2.5.2",
+    "vue-good-table": "^1.16.0",
+    "vue-router": "^3.0.1",
+    "vuefire": "^1.4.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -6,6 +6,7 @@ import FicheAlbum from '@/components/FicheAlbum'
 import Home from '@/components/Home'
 import PrivateBattles from '@/components/privateBattles'
 import PublicBattles from '@/components/publicBattles'
+import TableExample from '@/components/TableExample'
 import Callback from '@/components/callback'
 import { requireAuth } from '../../utils/auth'
 
@@ -46,6 +47,11 @@ export default new Router({
       name: 'PrivateBattles',
       beforeEnter: requireAuth,
       component: PrivateBattles
+    },
+    {
+      path: '/table-example',
+      name: 'TableExample',
+      component: TableExample
     },
     {
       path: '/callback',

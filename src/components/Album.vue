@@ -15,38 +15,27 @@
         </div>
       </div>
     <div class="panel-body">
-      <table class="table table-condensed table-responsive">
-      <thead>
-          <tr>
-                <th v-for="column in columns"
-                @click="sortBy(column)"
-                :class="{ active: sortColumn == column }">
-                    {{column }}
-                  <span class="arrow" :class="sortOrders[column] > 0 ? 'asc' : 'dsc'">
-                  </span>
-                </th>
-                <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="entry in filteredData">
-            <td v-for="key in columns">
-              {{entry[key]}}
-            </td>
+        <vue-good-table
+        :columns='columnsTable'
+        :rows='filteredData'
+        :paginate='true'
+        :lineNumbers='false'
+        :defaultSortBy="{field: 'artist', type :'asc'}"
+        styleClass="table table-bordered condensed">
+          <template slot="table-row-after" slot-scope="props">
             <td>
-              <button class="btn btn-success"  v-on:click="goToAlbum(entry)">
+              <button class="btn btn-success"  v-on:click="goToAlbum(props.row)">
                 <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Détail
               </button>
-              <button class="btn btn-primary" v-on:click="modifyAlbum(entry)">
+              <button class="btn btn-primary" v-on:click="modifyAlbum(props.row)">
                 <span class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
               </button>
-              <button class="btn btn-danger" v-on:click="removeAlbum(entry)">
+              <button class="btn btn-danger" v-on:click="removeAlbum(props.row)">
                 <span class="glyphicon glyphicon-trash"></span>&nbsp;Supprimer
               </button>
             </td>
-          </tr>
-        </tbody>
-        </table>
+          </template>
+        </vue-good-table>
       </div>
     </div>
     <br/>
@@ -131,7 +120,6 @@ export default {
   data () {
     return {
       albums: [],
-      columns: ['artist', 'title', 'style', 'nbPistes'],
       selectedAlbum: {
         artist: '',
         title: '',
@@ -142,7 +130,34 @@ export default {
       sortColumn: 'artist',
       sortOrders: { artist: 1, title: 1, style: 1, nbPistes: 1 },
       filterKey: '',
-      modify: null
+      modify: null,
+      columnsTable: [
+        {
+          label: 'Artiste',
+          field: 'artist',
+          filterable: true
+        },
+        {
+          label: 'Titre',
+          field: 'title',
+          filterable: true
+        },
+        {
+          label: 'Style',
+          field: 'style',
+          filterable: true
+        },
+        {
+          label: 'Nombre de pistes',
+          field: 'nbPistes',
+          type: 'number',
+          filterable: true
+        },
+        {
+          label: 'Actions',
+          field: null
+        }
+      ]
     }
   },
   // Récupération des valeurs sans vueFire
@@ -172,22 +187,13 @@ export default {
       })
     },
     filteredData: function () {
-      var sortColumn = this.sortColumn
       var filterKey = this.filterKey && this.filterKey.toLowerCase()
-      var order = this.sortOrders[sortColumn] || 1
       var data = this.albums
       if (filterKey) {
         data = data.filter(function (row) {
           return Object.keys(row).some(function (key) {
             return String(row[key]).toLowerCase().indexOf(filterKey) > -1
           })
-        })
-      }
-      if (sortColumn) {
-        data = data.slice().sort(function (a, b) {
-          a = a[sortColumn]
-          b = b[sortColumn]
-          return (a === b ? 0 : a > b ? 1 : -1) * order
         })
       }
       return data
