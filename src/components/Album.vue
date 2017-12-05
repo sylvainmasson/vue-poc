@@ -21,6 +21,9 @@
         :paginate='true'
         :lineNumbers='false'
         :defaultSortBy="{field: 'artist', type :'asc'}"
+        :nextText='nextText'
+        :prevText='prevText'
+        :rowsPerPageText='rowsPerPageText'
         styleClass="table table-bordered condensed">
           <template slot="table-row-after" slot-scope="props">
             <td>
@@ -131,6 +134,9 @@ export default {
       sortOrders: { artist: 1, title: 1, style: 1, nbPistes: 1 },
       filterKey: '',
       modify: null,
+      nextText: 'Page Suivante',
+      prevText: 'Page Précédente',
+      rowsPerPageText: 'Lignes par page',
       columnsTable: [
         {
           label: 'Artiste',

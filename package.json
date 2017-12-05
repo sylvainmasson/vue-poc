@@ -21,7 +21,7 @@
     "firebase": "^4.6.0",
     "jwt-decode": "^2.2.0",
     "vue": "^2.5.2",
-    "vue-good-table": "^1.16.0",
+    "vue-good-table": "^1.17.0",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.4"
   },
