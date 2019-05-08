@@ -4,7 +4,7 @@
       <div class="panel-heading clearfix">
         <div class="col-sm-12">
           <div class="col-sm-7 text-left">
-            <label>Liste des posts provenant de JsonPlaceHolder&nbsp</label>
+            <label>Liste des posts provenant de JsonPlaceHolder&nbsp {{formatted}}</label>
           </div>
           <div class="col-sm-5 text-right">
             Recherche : <input name="query" v-model="filterKey">
@@ -38,7 +38,8 @@ export default {
       columns: ['postId', 'id', 'name', 'email', 'body'],
       sortColumn: 'name',
       sortOrders: { postId: 1, id: 1, name: 1, email: 1, body: 1 },
-      filterKey: ''
+      filterKey: '',
+      formatted: null
     }
   },
   mounted () {
@@ -46,6 +47,7 @@ export default {
     .then(response => {
       // JSON responses are automatically parsed.
       this.data = response.data
+      this.formatted = Intl.NumberFormat('fr-FR', {style: 'currency', currency: 'EUR'}).format(2501.7599999998)
     })
   }
 }
